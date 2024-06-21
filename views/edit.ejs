@@ -1,0 +1,11 @@
+<h2>Welcome to Tweeter</h2>
+<a href="/article/<%= article._id %>">Back</a>
+
+<form action="/update/article/<%= article._id%>" method="POST">
+    <h1>Title</h1>
+    <input type="text" name="title" value="<%= article.title %>">
+    <h1>Article</h1>
+    <textarea name="content"><%= article.content %></textarea>
+    <p><%= article.createdAt %></p>
+    <button>Submit</button>
+</form>

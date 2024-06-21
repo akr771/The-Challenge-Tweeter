@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+    <div class="registerForm">
+        <form action="/registerUser" method="POST">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstName">
+            <% if (errors) { 
+                const error = errors.find(e => e.path === 'firstName');
+                if (error) { %>
+                    <p class="error"><%= error.msg %></p>
+            <% }} %>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastName">
+            <% if (errors) { 
+                const error = errors.find(e => e.path === 'lastName');
+                if (error) { %>
+                    <p class="error"><%= error.msg %></p>
+            <% }} %>
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email">
+            <% if (errors) { 
+                const error = errors.find(e => e.path === 'email');
+                if (error) { %>
+                    <p class="error"><%= error.msg %></p>
+            <% }} %>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <% if (errors) { 
+                const error = errors.find(e => e.path === 'password');
+                if (error) { %>
+                    <p class="error"><%= error.msg %></p>
+            <% }} %>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <input type="checkbox" onclick="togglePassword()">Show Password
+            <button>Register</button>
+            <p><% if(hashWrong){ %>
+                <p><%= hashWrong %></p>
+            <% } %></p>
+        </form>
+    </div>
+    <script>
+        // function togglePassword() {
+        //     var password = document.getElementById("password");
+        //     var confirmPassword = document.getElementById("confirmPassword");
+        //     if (password.type === "password" && confirmPassword.type === "password") {
+        //         password.type = "text";
+        //         confirmPassword.type = "text";
+        //     } else {
+        //         password.type = "password";
+        //         confirmPassword.type = "password";
+        //     }
+        // }
+    </script>
+</body>
+</html>

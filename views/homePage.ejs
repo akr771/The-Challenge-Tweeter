@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to Tweeter</h2>
+    <a href="/posts/create" class="btn btn--action">Create post</a>
+    <%for (let index=0; index < allArticles.length; index++) {%>
+        <h3>
+            <%= allArticles.at(index).title %>
+        </h3>
+        <p>
+            <%= allArticles.at(index).content %>
+        </p>
+        <h6>
+            <%= allArticles.at(index).createdAt %>
+        </h6>
+        
+        <a href="/article/<%=allArticles.at(index)._id%>">See More</a>
+        <% } %>
+</body>
+</html>

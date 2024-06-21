@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h2>Welcome to the message board!</h2>
+    <h5>Please log in:</h5>
+    <div class="loginForm">
+        <form action="/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <button>Log In</button>
+            <p><%= loginError %></p>
+        </form>
+    </div>
+    <div class="newuser">
+        <h3>New User?</h3>
+        <a href="/register">Click here to register!</a>
+    </div>
+  </body>
+</html>
